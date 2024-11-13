@@ -15,7 +15,7 @@ def pascal_triangle(n):
     Returns an empty list if n <= 0
     '''
     result = []
-    if n <= 0:
+    if (type(n) is not int) or (n <= 0):
         return result
     for r in range(n):
         row = []
