@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-from math import factorial
 
+def iterative_factorial(n):
+    fact = 1
+    for i in range(2, n + 1):
+        fact *= i
+    return fact
 
 def pascal_triangle(n):
     result = []
@@ -11,7 +15,7 @@ def pascal_triangle(n):
         row = []
         k = 0
         while (k <= r):
-            row.append(int(factorial(r) / (factorial(k)*factorial(r-k))))
+            row.append(iterative_factorial(r) / (iterative_factorial(k)*iterative_factorial(r-k)))
             k += 1
         result.append(row)
     return (result)
