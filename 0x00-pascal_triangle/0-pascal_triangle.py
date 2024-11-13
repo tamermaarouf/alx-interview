@@ -21,8 +21,8 @@ def pascal_triangle(n):
         row = []
         k = 0
         while (k <= r):
-            row.append(int(iterative_factorial(r) /
-                           (iterative_factorial(k)*iterative_factorial(r-k))))
+            row.append(iterative_factorial(r) //
+                           (iterative_factorial(k)*iterative_factorial(r-k)))
             k += 1
         result.append(row)
     return (result)
