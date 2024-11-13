@@ -22,7 +22,7 @@ def pascal_triangle(n):
         k = 0
         while (k <= r):
             row.append(iterative_factorial(r) //
-                           (iterative_factorial(k)*iterative_factorial(r-k)))
+                       (iterative_factorial(k)*iterative_factorial(r-k)))
             k += 1
         result.append(row)
     return (result)
