@@ -34,7 +34,6 @@ if __name__ == '__main__':
         for line in sys.stdin:
             data = line.split()
             line_count += 1
-            file_size += int(data[-1])
 
             try:
                 status_code = data[-2]
@@ -51,5 +50,4 @@ if __name__ == '__main__':
         print_status(status, file_size)
     except KeyboardInterrupt:
         print_status(status, file_size)
-        break
         raise
