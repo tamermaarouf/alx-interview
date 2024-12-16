@@ -35,14 +35,21 @@ if __name__ == '__main__':
             data = line.split()
             line_count += 1
             file_size += int(data[-1])
-            status_code = data[-2]
 
-            if status_code in status:
-                status[status_code] += 1
-
-                if line_count % 10 == 0:
-                    print_status(status, file_size)
+            try:
+                status_code = data[-2]
+                if status_code in status:
+                    status[status_code] += 1
+            except BaseException:
+                pass
+            try:
+                file_size += int(data[-1])
+            except BaseException:
+                pass
+            if line_count % 10 == 0:
+                print_status(status, file_size)
         print_status(status, file_size)
     except KeyboardInterrupt:
         print_status(status, file_size)
+        break
         raise
