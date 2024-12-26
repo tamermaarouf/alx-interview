@@ -30,11 +30,11 @@ def validUTF8(data):
             if ((binary_data >> 7) == 0):
                 count = 0
             elif ((binary_data >> 5) == 0b110):
-                count = 1
-            elif ((binary_data >> 4) == 0b1110):
                 count = 2
-            elif ((binary_data >> 3) == 0b11110):
+            elif ((binary_data >> 4) == 0b1110):
                 count = 3
+            elif ((binary_data >> 3) == 0b11110):
+                count = 4
             else:
                 return False
     return (count == 0)
