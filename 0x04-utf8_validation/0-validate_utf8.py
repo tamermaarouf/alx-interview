@@ -15,10 +15,7 @@ therefore you only need to handle the 8 least significant bits of each integer
 
 def validUTF8(data):
     '''
-    binary_data = []
-    for dt in data:
-        binary_data.append(dec2bin(dt))
-    return binary_data
+    Return: True if data is a valid UTF-8 encoding, else return False
     '''
     count = 0
     for binary_data in data:
