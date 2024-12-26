@@ -30,14 +30,13 @@ def validUTF8(data):
                 return False
         else:
             if ((binary_data >> 6) != 0b10):
-                # print(f'{dec2bin(binary_data)}')
                 return False
             count -= 1
     return (count == 0)
 
 
+'''
 def dec2bin(number: int):
-    '''
     ans = ''
     if (number == 0):
         return 0
@@ -45,5 +44,6 @@ def dec2bin(number: int):
         ans += str(number & 1)
         number >>= 1
         ans = ans[::-1]
-    '''
     return bin(number)
+
+'''
