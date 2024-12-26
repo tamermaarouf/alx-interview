@@ -19,9 +19,10 @@ def validUTF8(data):
     count = 0
     for binary_data in data:
         if count > 0:
-            if ((binary_data >> 6) != 0b10):
+            if ((binary_data >> 6) == 0b10):
+                count -= 1
+            else:
                 return False
-            count -= 1
         elif count == 0:
             if ((binary_data >> 7) == 0):
                 count = 0
