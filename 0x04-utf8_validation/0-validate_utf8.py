@@ -27,18 +27,17 @@ def validUTF8(data):
                 continue
             else:
                 return False
+        if ((binary_data >> 7) == 0):
+            continue
+        if ((binary_data >> 5) == 0b110):
+            count = 1
+            continue
+        if ((binary_data >> 4) == 0b1110):
+            count = 2
+            continue
+        if ((binary_data >> 3) == 0b11110):
+            count = 3
+            continue
         else:
-            if ((binary_data >> 7) == 0):
-                continue
-            elif ((binary_data >> 5) == 0b110):
-                count = 1
-                continue
-            elif ((binary_data >> 4) == 0b1110):
-                count = 2
-                continue
-            elif ((binary_data >> 3) == 0b11110):
-                count = 3
-                continue
-            else:
-                return False
+            return False
     return (count == 0)
