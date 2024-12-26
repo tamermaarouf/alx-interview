@@ -2,7 +2,6 @@
 '''
 Write a method that determines
 if a given data set represents a valid UTF-8 encoding.
-
 Prototype: def validUTF8(data)
 Return: True if data is a valid UTF-8 encoding, else return False
 A character in UTF-8 can be 1 to 4 bytes long
@@ -24,14 +23,14 @@ def validUTF8(data):
                 return False
             count -= 1
         else:
-            if ((binary_data >> 5) == 0b110):
+            if ((binary_data >> 7) == 0):
+                count = 0
+            elif ((binary_data >> 5) == 0b110):
                 count = 1
             elif ((binary_data >> 4) == 0b1110):
                 count = 2
             elif ((binary_data >> 3) == 0b11110):
                 count = 3
-            elif ((binary_data >> 7) == 0):
-                count = 0
             else:
                 return False
     return (count == 0)
