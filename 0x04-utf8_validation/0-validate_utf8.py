@@ -26,7 +26,7 @@ def validUTF8(data):
                 count -= 1
             else:
                 return False
-        else:
+        if count == 0:
             if ((binary_data >> 7) == 0):
                 count = 0
             elif ((binary_data >> 5) == 0b110):
@@ -35,4 +35,6 @@ def validUTF8(data):
                 count = 2
             elif ((binary_data >> 3) == 0b1110):
                 count = 3
+        else:
+            return False
     return (count == 0)
