@@ -26,7 +26,7 @@ def validUTF8(data):
                 count -= 1
             else:
                 return False
-        if count == 0:
+        else:
             if ((binary_data >> 7) == 0):
                 count = 0
             elif ((binary_data >> 5) == 0b110):
