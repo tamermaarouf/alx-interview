@@ -41,4 +41,4 @@ def validUTF8(data):
                 continue
             else:
                 return False
-    return (count == 0)
+    return True
