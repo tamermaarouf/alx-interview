@@ -20,16 +20,30 @@ def validUTF8(data):
     count = 0
     for binary_data in data:
         if (count == 0):
-            if ((binary_data >> 5) == 110):
+            if ((binary_data >> 5) == 0b110):
                 count = 1
-            elif ((binary_data >> 4) == 1110):
+            elif ((binary_data >> 4) == 0b1110):
                 count = 2
-            elif ((binary_data >> 3) == 11110):
+            elif ((binary_data >> 3) == 0b11110):
                 count = 3
-            elif ((binary_data >> 7) != 0):
+            elif ((binary_data >> 7)):
                 return False
         else:
-            if ((binary_data >> 6) != 10):
+            if ((binary_data >> 6) != 0b10):
+                # print(f'{dec2bin(binary_data)}')
                 return False
             count -= 1
     return (count == 0)
+
+
+def dec2bin(number: int):
+    '''
+    ans = ''
+    if (number == 0):
+        return 0
+    while (number):
+        ans += str(number & 1)
+        number >>= 1
+        ans = ans[::-1]
+    '''
+    return bin(number)
