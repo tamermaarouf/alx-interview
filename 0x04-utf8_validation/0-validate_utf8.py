@@ -14,7 +14,8 @@ therefore you only need to handle the 8 least significant bits of each integer
 
 def validUTF8(data):
     '''
-    Return: True if data is a valid UTF-8 encoding, else return False
+    Return: True if data is a valid
+    UTF-8 encoding, else return False
     '''
     count = 0
     for binary_data in data:
