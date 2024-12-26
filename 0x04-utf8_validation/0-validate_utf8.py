@@ -17,6 +17,8 @@ def validUTF8(data):
     '''
     Return: True if data is a valid UTF-8 encoding, else return False
     '''
+    if data == []:
+        return True
     count = 0
     for binary_data in data:
         if (count == 0):
