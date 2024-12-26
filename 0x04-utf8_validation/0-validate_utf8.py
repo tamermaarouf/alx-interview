@@ -18,6 +18,8 @@ def validUTF8(data):
     '''
     count = 0
     for binary_data in data:
+        if not isinstance(binary_data, int):
+            return False
         if count > 0:
             if ((binary_data >> 6) == 0b10):
                 count -= 1
